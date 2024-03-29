@@ -9,11 +9,11 @@
             background-color: #ffcccc;
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
-            max-width: 98vw;
+            max-width: 95vw;
             height: 85vh;
         }
         .container {
-            padding: 20px;
+            padding: 30px;
             border: 1px solid rgba(255, 255, 255, 0.575);
         }
         h1 {
@@ -41,21 +41,21 @@
         <p>Nesse dia quero te fazer um pedido muito especial</p>
         <p>❤️ Você aceita namorar comigo? ❤️</p>
         <p class="heart" onclick="mostrarResposta()">SIM<br>❤️</p>
-        <button id="nao" onclick="mudarPosicao()">Não</button>
+        <button id="nao" onclick="mudarPosicao()" onmouseenter="mudarPosicao()">Não</button>
         <p id="resposta" style="display: none;"></p>
     </div>
 
     <script>
         function mostrarResposta() {
             document.getElementById('resposta').style.display = 'block';
-            document.getElementById('resposta').innerHTML = 'EBAAA!!!! Eu te amo muito ❤️❤️❤️❤️❤️';
+            document.getElementById('resposta').innerHTML = 'Agora estamos namorando! ❤️';
         }
         function mudarPosicao() {
             const buttonNao = document.getElementById('nao');
             const randomX = Math.floor(Math.random() * window.innerWidth);
             const randomY = Math.floor(Math.random() * window.innerHeight);
             buttonNao.style.left =  `${randomX}px`
-            button.style.top = `${randomY}px`
+            buttonNao.style.top = `${randomY}px`
         }
     </script>
 </body>
