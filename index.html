@@ -19,6 +19,10 @@
         h1 {
             color: #ff3366;
         }
+        a {
+            text-decoration: none;
+            color: #ff3366;
+        }
         .heart {
             font-size: 30px;
             color: #ff3366;
@@ -32,6 +36,11 @@
             cursor: pointer;
             position: absolute;
         }
+
+        iframe {
+            display: none;
+            margin: auto;
+        }
     </style>
 </head>
 <body>
@@ -41,14 +50,16 @@
         <p>Nesse dia quero te fazer um pedido muito especial</p>
         <p>❤️ Você aceita namorar comigo? ❤️</p>
         <p class="heart" onclick="mostrarResposta()">SIM<br>❤️</p>
+        <iframe id="audio" width="400" height="200" src="https://www.youtube-nocookie.com/embed/viLOwcNye4E?si=aDayV9YYOCq7gUCL&amp;controls=0&amp;start=97" title="Pedido aceito" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <button id="nao" onclick="mudarPosicao()" onmouseenter="mudarPosicao()">Não</button>
         <p id="resposta" style="display: none;"></p>
     </div>
-
     <script>
         function mostrarResposta() {
             document.getElementById('resposta').style.display = 'block';
             document.getElementById('resposta').innerHTML = 'Agora estamos namorando! ❤️';
+            document.getElementById('nao').style.display = 'none';
+            document.getElementById('audio').style.display = 'flex';
         }
         function mudarPosicao() {
             const buttonNao = document.getElementById('nao');
